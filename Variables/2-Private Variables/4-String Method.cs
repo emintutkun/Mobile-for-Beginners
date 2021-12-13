@@ -22,9 +22,9 @@ namespace StringMethod
 
             object a = "50";
 
-            string name2 = "        Name        ";
+            string name2 = "        Name******";
             Console.WriteLine(name2.Trim());
-            Console.WriteLine(name2.TrimEnd());
+            Console.WriteLine(name2.TrimEnd('*'));
             Console.WriteLine(name2.TrimStart());
         }
     }
