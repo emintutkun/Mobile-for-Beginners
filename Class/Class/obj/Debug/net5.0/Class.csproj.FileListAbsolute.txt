@@ -1,0 +1,16 @@
+C:\301Sabah\İşkur\5-OOP\Class\Class\bin\Debug\net5.0\Class.exe
+C:\301Sabah\İşkur\5-OOP\Class\Class\bin\Debug\net5.0\Class.deps.json
+C:\301Sabah\İşkur\5-OOP\Class\Class\bin\Debug\net5.0\Class.runtimeconfig.json
+C:\301Sabah\İşkur\5-OOP\Class\Class\bin\Debug\net5.0\Class.runtimeconfig.dev.json
+C:\301Sabah\İşkur\5-OOP\Class\Class\bin\Debug\net5.0\Class.dll
+C:\301Sabah\İşkur\5-OOP\Class\Class\bin\Debug\net5.0\ref\Class.dll
+C:\301Sabah\İşkur\5-OOP\Class\Class\bin\Debug\net5.0\Class.pdb
+C:\301Sabah\İşkur\5-OOP\Class\Class\obj\Debug\net5.0\Class.csproj.AssemblyReference.cache
+C:\301Sabah\İşkur\5-OOP\Class\Class\obj\Debug\net5.0\Class.GeneratedMSBuildEditorConfig.editorconfig
+C:\301Sabah\İşkur\5-OOP\Class\Class\obj\Debug\net5.0\Class.AssemblyInfoInputs.cache
+C:\301Sabah\İşkur\5-OOP\Class\Class\obj\Debug\net5.0\Class.AssemblyInfo.cs
+C:\301Sabah\İşkur\5-OOP\Class\Class\obj\Debug\net5.0\Class.csproj.CoreCompileInputs.cache
+C:\301Sabah\İşkur\5-OOP\Class\Class\obj\Debug\net5.0\Class.dll
+C:\301Sabah\İşkur\5-OOP\Class\Class\obj\Debug\net5.0\ref\Class.dll
+C:\301Sabah\İşkur\5-OOP\Class\Class\obj\Debug\net5.0\Class.pdb
+C:\301Sabah\İşkur\5-OOP\Class\Class\obj\Debug\net5.0\Class.genruntimeconfig.cache
