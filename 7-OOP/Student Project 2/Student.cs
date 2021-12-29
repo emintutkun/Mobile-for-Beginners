@@ -17,7 +17,40 @@ namespace StudentProject
         public int DoorNumber { get; set; }
         public string City { get; set; }
         public string County { get; set; }
-
+        public int Salary { get; set; }
+        public string GetTitle()
+        {
+            if (Sex == 'E')
+            {
+                return "Mr:" + Surname;
+            }
+            else 
+            {
+                return "Ms:" + Surname;
+            }
+        }
+        public int getAge()
+        {
+            DateTime today = DateTime.Now;
+            int Age = today.Year - BornDate.Year;
+            DateTime BornDay = BornDate.AddYears(Age);
+            
+            
+            if (BornDate < today)
+            {
+                Age = Age + 1;
+            }
+            return Age;
+        }
+        public List<string> getAddress()
+        {
+            List<string> adr = new List<string>();
+            adr.Add(City);
+            adr.Add(County);
+            adr.Add(Street);
+            adr.Add(DoorNumber.ToString());
+            return adr;
+        }
         public string getAddress2()
         {
             return $"   City: { City}\n No { DoorNumber}\n" + $"{County + City}";
