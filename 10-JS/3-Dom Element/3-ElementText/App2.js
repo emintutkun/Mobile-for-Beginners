@@ -22,8 +22,10 @@
 //     element.style.background ='#000'
 // })
 
-element = document.querySelector("li:first-child")
-element = document.querySelector("li:last-child")
-element = document.querySelector("li:nth-child(2)")
-element = document.querySelectorAll("li:nth-child(odd)")
-console.log(element)
+//element = document.querySelector("li:first-child")
+//element = document.querySelector("li:last-child")
+//element = document.querySelector("li:nth-child(2)")
+//element = document.querySelectorAll("li:nth-child(odd)")
+//console.log(element)
+
+document.getElementById("demo").innertext = "Masmavi.."
