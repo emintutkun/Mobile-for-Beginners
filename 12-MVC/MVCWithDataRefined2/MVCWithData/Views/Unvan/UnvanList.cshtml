@@ -1,0 +1,40 @@
+﻿@model List<MVCWithData.Models.Classes.Unvan>
+@{
+    ViewBag.Title = "UnvanList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <h2>Ünvan Listesi Listesi</h2>
+            <hr />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Ad</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.UnvanId</td>
+                            <td>@item.UnvanAd</td>
+                            <td><a class="btn btn-danger" href="/Unvan/UnvanDelete/@item.UnvanId">Sil</a></td>
+                            <td><a class="btn btn-success" href="/Unvan/UnvanUpdate/@item.UnvanId">Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <form method="post" action="/Unvan/UnvanCreate">
+                <a href="/Unvan/UnvanCreate" class="btn btn-primary">Yeni Kayıt</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+

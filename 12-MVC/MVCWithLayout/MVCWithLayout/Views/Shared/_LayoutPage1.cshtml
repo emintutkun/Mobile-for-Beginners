@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        a {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family:Arial
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3 style="color: red; text-align:center">MVC Proje</h3>
+        <div style="text-align:center; background-color:lightyellow; border:1px solid black">
+            <a href="/Home/Index">Ana Sayfa</a>
+            <a href="/Home/About">Biz Kimiz?</a>
+            <a href="/Home/Contact">Bize Ulaşın</a>
+            <a href="/Personel/List">Personel İşlemleri</a>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿@model MVCWithData.Models.Views.PersonelModel
+
+<h3>@Model.Baslik</h3>
+
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            <label>Personel Id</label>
+            <input class="form-control" type="text" name="Personel.PersonelId" value="@Model.Personel.PersonelId" readonly />
+            <label>Adı</label>
+            <input type="text" name="Personel.Ad" value="@Model.Personel.Ad" class="form-control" />
+            <label>Soyadı</label>
+            <input type="text" name="Personel.Soyad" value="@Model.Personel.Soyad" class="form-control" />
+            <label>Maaş</label>
+            <input type="text" name="Personel.Maas" value="@Model.Personel.Maas" class="form-control" />
+            <label>Uyruk</label>
+            <select class="form-control" name="Personel.UyrukId">
+                @foreach (var item in Model.UlkeList)
+                {
+                    if (item.UlkeId == Model.Personel.UyrukId)
+                    {
+                        <option selected style="color:red;" name="Personel.UyrukId" value="@item.UlkeId">@item.UlkeAd</option>
+                    }
+                    else
+                    {
+                        <option name="Personel.UlkeId" value="@item.UlkeId">@item.UlkeAd</option>
+                    }
+                }
+            </select>
+            <label>Yönetici</label>
+            <select class="form-control" name="Personel.YoneticiId">
+                @foreach (var item in Model.YoneticiList)
+                {
+                    if (item.YoneticiId == Model.Personel.PersonelId)
+                    {
+                        <option selected style="color:red;" name="Personel.YoneticiId" value="@item.YoneticiId">@item.YoneticiAd @item.YoneticiSoyad</option>
+                    }
+                    else
+                    {
+                        <option name="Personel.YoneticiId" value="@item.YoneticiId">@item.YoneticiAd @item.YoneticiSoyad</option>
+                    }
+                }
+            </select>
+            <label>İkamet</label>
+            <select class="form-control" name="Personel.UlkeId">
+                @foreach (var item in Model.UlkeList)
+                {
+                    if (item.UlkeId == Model.Personel.UlkeId)
+                    {
+                        <option selected style="color:red;" name="Personel.UlkeId" value="@item.UlkeId">@item.UlkeAd</option>
+                    }
+                    else
+                    {
+                        <option name="Personel.UlkeId" value="@item.UlkeId">@item.UlkeAd</option>
+                    }
+                }
+            </select>
+            <label>Ünvan</label><br />
+            <select class="form-control" name="Personel.UnvanId">
+                @foreach (var item in Model.UnvanList)
+                {
+                    if (item.UnvanId == Model.Personel.UnvanId)
+                    {
+                        <option selected style="color:red;" name="Personel.UnvanId" value="@item.UnvanId">@item.UnvanAd</option>
+                    }
+                    else
+                    {
+                        <option name="Personel.UnvanId" value="@item.UnvanId">@item.UnvanAd</option>
+                    }
+                }
+            </select>
+            <br />
+            <input type="submit" value="@Model.BtnVal" class="@Model.BtnClass" />
+            <input type="submit" value="İptal" class="btn btn-warning" formaction="/Personel/PersonelList" />
+        </form>
+    </div>
+</div>

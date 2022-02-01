@@ -1,0 +1,34 @@
+﻿@model MVCWithData.Models.Views.PersonelModel
+
+<h3>@Model.Baslik</h3>
+
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            <input class="form-control" type="text" name="Personel.PersonelId" value="@Model.Personel.PersonelId" readonly />
+            <label>Ad</label>
+            <input type="text" name="Personel.Ad" value="@Model.Personel.Ad" class="form-control" />
+            <label>Soyad</label>
+            <input type="text" name="Personel.Soyad" value="@Model.Personel.Soyad" class="form-control" />
+            <label>Maaş</label>
+            <input type="text" name="Personel.Maas" value="@Model.Personel.Maas" class="form-control" />
+            <label>Ünvan</label><br />
+            <select class="form-control" name="Personel.UnvanId">
+                @foreach (var item in Model.UnvanList)
+                {
+                    if (item.UnvanId == Model.Personel.UnvanId)
+                    {
+                        <option selected style="color:red;" name="Personel.UnvanId" value="@item.UnvanId">@item.UnvanAd</option>
+                    }
+                    else
+                    {
+                        <option name="Personel.UnvanId" value="@item.UnvanId">@item.UnvanAd</option>
+                    }
+                }
+            </select>
+            <br />
+            <input type="submit" value="@Model.BtnVal" class="@Model.BtnClass" />
+            <input type="submit" value="İptal" class="btn btn-warning" formaction="/Personel/PersonelList" />
+        </form>
+    </div>
+</div>

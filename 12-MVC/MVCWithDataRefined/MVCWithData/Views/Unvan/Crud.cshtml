@@ -1,0 +1,20 @@
+﻿@model MVCWithData.Models.Views.UnvanModel
+@{
+    ViewBag.Title = "UnvanCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@Model.Baslik</h3>
+
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            <label>Id</label>
+            <input class="form-control" value="@Model.unvan.UnvanId" name="UnvanId"  readonly/> <!--readonly yerine disabled yapılırsa unvanid okunmaz!!!-->
+            <label>Ad</label>
+            <input class="form-control" type="text" value="@Model.unvan.UnvanAd" name="UnvanAd" /><br />
+            <input class="@Model.BtnClass" type="submit" value="@Model.BtnVal" />
+            <input class="btn btn-warning" type="submit" value="İptal" formaction="UnvanList"/>
+        </form>
+    </div>
+</div>

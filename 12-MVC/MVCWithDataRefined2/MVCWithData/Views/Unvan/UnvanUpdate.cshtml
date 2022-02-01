@@ -1,0 +1,17 @@
+﻿@model MVCWithData.Models.Classes.Unvan
+@{
+    ViewBag.Title = "UnvanUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            <input class="form-control" type="hidden" value="@Model.UnvanId" name="UnvanId" /> <!--Son kullanıcının değiştirmesini engellemmek için gizledik!!-->
+            <label>Ad</label>
+            <input class="form-control" type="text" value="@Model.UnvanAd" name="UnvanAd" /><br />
+            <input class="btn btn-success" type="submit" value="Güncelle" />
+        </form>
+    </div>
+</div>
+

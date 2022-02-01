@@ -1,0 +1,47 @@
+﻿@model List<MVCWithData.Models.Classes.Personel>
+@{
+    ViewBag.Title = "PersonelList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <h2>Personel Listesi</h2>
+            <hr />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Adı Soyadı</th>
+                        <th>İkamet</th>
+                        <th>Uyruk</th>
+                        <th>Yönetici</th>
+                        <th>Maaş</th>
+                        <th>Ünvan</th>
+                        <th>Güncelle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.PersonelId</td>
+                            <td>@item.Ad @item.Soyad</td>
+                            <td>@item.UlkeId</td>
+                            <td>@item.UyrukId</td>
+                            <td>@item.Yonetici</td>
+                            <td>@item.Maas</td>
+                            <td>@item.UnvanId</td>
+                            <td><a class="btn btn-success" href="/Personel/Update/@item.PersonelId">Güncelle</a></td>
+                            <td><a class="btn btn-danger" href="/Personel/Delete/@item.PersonelId">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a class="btn btn-primary" href="/Personel/Create">Kayıt Ekle</a>
+        </div>
+    </div>
+</div>
+

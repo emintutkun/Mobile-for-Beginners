@@ -1,0 +1,18 @@
+﻿@model MVCWithData.Models.Classes.Ulke
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            <label>Id</label>
+            <input class="form-control" type="text" name="UlkeId" /> <!--Son kullanıcının değiştirmesini engellemmek için gizledik!!-->
+            <label>Ad</label>
+            <input class="form-control" type="text" name="UlkeAd" /><br />
+            <input class="btn btn-primary" type="submit" value="Ekle" />
+        </form>
+    </div>
+</div>
+

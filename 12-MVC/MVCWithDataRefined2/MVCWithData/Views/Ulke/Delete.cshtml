@@ -1,0 +1,17 @@
+﻿@model MVCWithData.Models.Classes.Ulke
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <form method="post">
+            <input class="form-control" type="hidden" value="@Model.UlkeId" name="UlkeId" /> <!--Son kullanıcının değiştirmesini engellemmek için gizledik!!-->
+            <label>Ad</label>
+            <input class="form-control" type="text" value="@Model.UlkeAd" name="UlkeAd" /><br />
+            <input class="btn btn-danger" type="submit" value="Sil" />
+        </form>
+    </div>
+</div>
+
