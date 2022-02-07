@@ -1,0 +1,34 @@
+﻿@model List<MVCproje.Classes.Ulke>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-5">
+        <h2>Ülke Listesi</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ÜlkeId</th>
+                    <th>ÜlkeAd</th>
+                    <th>Güncelle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.UlkeId</td>
+                        <td>@item.UlkeAd</td>
+                        <td><a class="btn btn-success" href="/Ulke/Update/@item.UlkeId">Güncelle</a></td>
+                        <td><a class="btn btn-danger" href="/Ulke/Delete/@item.UlkeId">Sil</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a class="btn btn-primary" href="/Ulke/Create">Yeni Kayıt</a>
+    </div>
+</div>
+

@@ -1,0 +1,19 @@
+﻿@model MVCproje.Models.Views.UnvanModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Baslik</h2>
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post">
+            <label>Unvan Id</label><br />
+            <input type="text" class="form-control" name="UnvanId" value="@Model.Unvan.UnvanId" readonly/><br />
+            <label>Unvan Ad</label><br />   
+            <input type="text"  class="form-control" name="UnvanAd" value="@Model.Unvan.UnvanAd" /><br />   
+            <input type="submit" class="@Model.BtnClass" value="@Model.BtnVal" />
+            <input type="submit" class="btn btn-warning" value="İptal" formaction="/Unvan/List"/>
+        </form>
+    </div>
+</div>
