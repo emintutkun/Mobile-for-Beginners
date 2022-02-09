@@ -7,3 +7,13 @@ C:\301Sabah\Mobile-for-Beginners\FrameworkProje\Framework\obj\Debug\Framework.pd
 C:\301Sabah\Mobile-for-Beginners\FrameworkProje\Framework\bin\Debug\Dapper.dll
 C:\301Sabah\Mobile-for-Beginners\FrameworkProje\Framework\bin\Debug\Dapper.xml
 C:\301Sabah\Mobile-for-Beginners\FrameworkProje\Framework\obj\Debug\Framework.csproj.CopyComplete
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\bin\Debug\Framework.dll
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\bin\Debug\Framework.pdb
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\bin\Debug\Dapper.dll
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\bin\Debug\Dapper.xml
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\obj\Debug\Framework.csproj.AssemblyReference.cache
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\obj\Debug\Framework.csproj.CoreCompileInputs.cache
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\obj\Debug\Framework.csproj.CopyComplete
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\obj\Debug\Framework.dll
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\obj\Debug\Framework.pdb
+C:\301Sabah\Mobile-for-Beginners\FrameworkProjeRenew\Framework\bin\Debug\Framework.dll.config
