@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
@@ -21,23 +23,48 @@ namespace OgrenciProjeCodeFirst.Models.Data
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
+        public virtual DbSet<Student> Student { get; set; }
+        public virtual DbSet<City> City { get; set; }
+        public virtual DbSet<Teacher> Teacher { get; set; }
+
     }
 
-    public class Student
+    public class Student : Base
+    {
+    }
+    public class Teacher : Base
+    {
+        public int Salary { get; set; }
+    }
+    abstract public class Base
     {
         [Key]
-        public int StudentId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public int CityId { get; set; }
-
+        public string MotherName { get; set; }
+        [ForeignKey("CityId")]
+        public virtual City City { get; set; }
+        public string FullName() 
+        {
+            return Name + " " + Surname;    
+        }
     }
+
     public class City
     {
+        public City()
+        {
+            this.Students = new HashSet<Student>();
+            this.Teacher = new HashSet<Teacher>();
+
+        }
         [Key]
         public int CityId { get; set; }
         public string CityName { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<Teacher> Teacher { get; set; }
 
     }
 }
