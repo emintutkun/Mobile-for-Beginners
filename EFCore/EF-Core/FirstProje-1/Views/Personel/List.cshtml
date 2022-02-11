@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FirstProje_1.DTO.PersonelDTO>
+    @{
+        ViewData["Title"] = "List";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <h1>Personnel List</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
+    </p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    PersonelId
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Surname
+                </th>               
+                <th>
+                    CityName
+                </th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.PersonelId)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </th>                 
+                    <th>
+                        @Html.DisplayFor(modelItem => item.CityName)
+                    </th>
+                    <th>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.PersonelId">Edit</a>
+                    </th>
+                    <th>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PersonelId">Delete</a>
+                    </th>
+                </tr>
+            }
+
+        </tbody>
+    </table>
