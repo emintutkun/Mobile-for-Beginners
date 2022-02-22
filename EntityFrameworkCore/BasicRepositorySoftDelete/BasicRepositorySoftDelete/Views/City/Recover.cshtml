@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BasicRepositorySoftDelete.Models.Classes.City>
+
+@{
+    ViewData["Title"] = "Recover";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>Recover List</h2>
+            <hr />
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>
+                            City Id
+                        </th>
+                        <th>
+                            City Name
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.Id
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CityName)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a class="btn btn-secondary" asp-action="List">Back To List</a>
+        </div>
+    </div>
+</div>

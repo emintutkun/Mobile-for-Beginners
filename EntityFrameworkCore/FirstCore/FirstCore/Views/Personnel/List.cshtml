@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FirstCore.Models.DTOs.PersonelDTO>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Personnel List</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Personnel Id</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>City Name</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.PersonelId</td>
+                            <td>@item.Name</td>
+                            <td>@item.Surname</td>
+                            <td>@item.CityName</td>
+                            <td><a class="btn btn-success" asp-action="Update" asp-route-id="@item.PersonelId">Update</a></td>
+                            <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PersonelId">Delete</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a class="btn btn-primary" asp-action="Create">Create New Personnel</a>
+        </div>
+    </div>
+</div>
+

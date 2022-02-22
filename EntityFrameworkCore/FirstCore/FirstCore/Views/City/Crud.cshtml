@@ -1,0 +1,35 @@
+﻿@model FirstCore.Models.ViewModel.CityModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div><!--"ModelOnly" tag'ı ile Model Class örnek alınır-->
+        <h2>@Model.Header</h2>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="City.CityId" class="control-label"></label>
+                <input readonly asp-for="City.CityId" class="form-control" /><!--"asp-for" tagı'ı html içineki name ve value değerlerine karşılık gelir-->
+            </div>
+            <div class="form-group">
+                <label asp-for="City.CityName" class="control-label"></label>
+                <input asp-for="City.CityName" class="form-control" /><!--"asp-for" tagı'ı html içineki name ve value değerlerine karşılık gelir-->
+                <span asp-validation-for="City.CityName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-secondary" asp-action="List">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

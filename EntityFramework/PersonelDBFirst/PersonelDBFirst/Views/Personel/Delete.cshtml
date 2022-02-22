@@ -1,0 +1,22 @@
+﻿@model PersonelDBFirst.Models.Data.Personel
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Silme Sayfası</h2>
+            <form method="post">
+                <label>Personel Id</label>
+                <input readonly class="form-control" type="text" name="PersonelId" value="@Model.PersonelId" />
+                <label>Ad</label>
+                <input readonly class="form-control" type="text" name="Ad" value="@Model.Ad" /><br />
+                <input class="btn btn-danger" type="submit" value="Sil"/>
+                <input type="submit" value="İptal" class="btn btn-warning" formaction="/Personel/List"/>
+            </form>
+        </div>
+    </div>
+</div>
+

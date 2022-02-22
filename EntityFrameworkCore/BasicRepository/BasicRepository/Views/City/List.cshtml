@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BasicRepository.Models.Classes.City>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>City List</h2>
+            <hr />
+            <div class="text-md-center">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>City Id</th>
+                            <th>
+                                City Name
+                            </th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.CityId</td>
+                                <td>
+                                    @item.CityName
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" asp-action="Update" asp-route-id="@item.CityId">Update</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CityId">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                <a class="btn btn-primary" asp-action="Create">Create New City</a>
+            </p>
+        </div>
+    </div>
+</div>

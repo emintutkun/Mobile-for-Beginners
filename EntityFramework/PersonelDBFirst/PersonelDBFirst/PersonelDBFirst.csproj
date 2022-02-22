@@ -133,12 +133,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connection\DbSingleTone.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
+    <Compile Include="Controllers\UlkeController.cs" />
     <Compile Include="Controllers\UnvanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Classes\Yonetici.cs" />
     <Compile Include="Models\Data\PerDbContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -164,13 +167,13 @@
       <DependentUpon>PerDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DTOs\PersonelDTO.cs" />
+    <Compile Include="Models\DTOs\PersonelDTOSelect.cs" />
+    <Compile Include="Models\DTOs\UlkeDTO.cs" />
+    <Compile Include="Models\DTOs\UnvanDTO.cs" />
+    <Compile Include="Models\Views\PersonelModel.cs" />
+    <Compile Include="Models\Views\UlkeModel.cs" />
     <Compile Include="Models\Views\UnvanModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -209,10 +212,10 @@
     <Content Include="Views\Unvan\List.cshtml" />
     <Content Include="Views\Unvan\Crud.cshtml" />
     <Content Include="Views\Personel\List.cshtml" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
+    <Content Include="Views\Ulke\List.cshtml" />
+    <Content Include="Views\Ulke\Crud.cshtml" />
+    <Content Include="Views\Personel\Crud.cshtml" />
+    <Content Include="Views\Personel\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

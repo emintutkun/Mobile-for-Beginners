@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PersonelDBFirst.Connection;
 using PersonelDBFirst.Models.Data;
 using PersonelDBFirst.Models.Views;
 
@@ -11,7 +12,7 @@ namespace PersonelDBFirst.Controllers
     public class UnvanController : Controller
     {
         // GET: Unvan
-        perdb2Entities db = new perdb2Entities();
+        perdb2Entities db = DbSingleTone.GetConnection();
         public ActionResult List()
         {
             //1.yol

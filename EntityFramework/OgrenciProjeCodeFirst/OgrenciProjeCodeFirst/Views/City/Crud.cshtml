@@ -1,0 +1,23 @@
+﻿@model OgrenciProjeCodeFirst.Models.Views.CityModel
+
+@{
+    ViewBag.Title = "Crud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>@Model.Header</h2>
+            <form method="post">
+                <label>City Id</label>
+                <input readonly class="form-control" type="text" name="CityId" value="@Model.City.CityId" />
+                <label>City Name</label>
+                <input class="form-control" type="text" name="CityName" value="@Model.City.CityName" /><br />
+                <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass" />
+                <input type="submit" value="İptal" class="btn btn-warning" formaction="/City/List"/>
+            </form>
+        </div>
+    </div>
+</div>
+

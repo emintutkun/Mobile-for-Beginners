@@ -1,0 +1,41 @@
+﻿@model OgrenciProjeCodeFirst.Models.Views.StudentModel
+
+@{
+    ViewBag.Title = "Crud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>@Model.Header</h2>
+            <form method="post">
+                <label>Id</label>
+                <input class="form-control" readonly type="text" name="Id" value="@Model.Student.Id" />
+                <label>Name</label>
+                <input class="form-control" type="text" name="Name" value="@Model.Student.Name" />
+                <label>Surname</label>
+                <input class="form-control" type="text" name="SurName" value="@Model.Student.SurName" />
+                <label>City Name</label>
+                <select class="form-control" name="CityId">
+                    @foreach (var item in Model.cityList)
+                    {
+                        if (item.CityId == Model.Student.CityId)
+                        {
+                            <option selected style="color:red;" name="CityId" value="@item.CityId">@item.CityName</option>
+                        }
+                        else
+                        {
+                            <option name="CityId" value="@item.CityId">@item.CityName</option>
+                        }
+                    }
+                </select>
+                <label>Mother Name</label>
+                <input class="form-control" type="text" name="MotherName" value="@Model.Student.MotherName" /><br />
+                <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass"/>
+                <input type="submit" value="İptal" class="btn btn-warning" formaction="/Student/List"/>
+            </form>
+        </div>
+    </div>
+</div>
+

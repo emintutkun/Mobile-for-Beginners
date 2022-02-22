@@ -1,0 +1,47 @@
+﻿@model List<OgrenciProjeCodeFirst.Models.DTOs.TeacherDTO>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Öğretmenler</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>SurName</th>
+                        <th>Salary</th>
+                        <th>City Name</th>
+                        <th>Mother Name</th>
+                        <th>Full Name</th>
+                        <th>Güncelle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.SurName</td>
+                            <td>@item.Salary</td>
+                            <td>@item.CityName</td>
+                            <td>@item.MotherName</td>
+                            <td>@item.FullName</td>
+                            <td><a class="btn btn-success" href="/Teacher/Update/@item.Id">Güncelle</a></td>
+                            <td><a class="btn btn-danger" href="/Teacher/Delete/@item.Id">Sil</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a class="btn btn-primary" href="/Teacher/Create">Yeni Kayıt</a>
+        </div>
+    </div>
+</div>
+

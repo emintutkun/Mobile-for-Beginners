@@ -1,0 +1,35 @@
+﻿@model BasicRepositorySoftDelete.Models.Views.CityModel
+
+@{
+    ViewData["Title"] = "Crud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>@Model.Header</h2>
+            <hr />
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label>City Id</label>
+                    <input readonly asp-for="City.Id" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>City Name</label>
+                    <input asp-for="City.CityName" class="form-control" />
+                    <span asp-validation-for="City.CityName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass" />
+                    <input type="submit" value="Back To List" class="btn btn-secondary" asp-action="List"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

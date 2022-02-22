@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonelDBFirst", "PersonelDBFirst\PersonelDBFirst.csproj", "{B8441BA2-8B28-4F9C-9B85-A49DBCF04EE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8441BA2-8B28-4F9C-9B85-A49DBCF04EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8441BA2-8B28-4F9C-9B85-A49DBCF04EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8441BA2-8B28-4F9C-9B85-A49DBCF04EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8441BA2-8B28-4F9C-9B85-A49DBCF04EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D66EAEA5-CF5A-4380-9502-4F5531125CFC}
+	EndGlobalSection
+EndGlobal

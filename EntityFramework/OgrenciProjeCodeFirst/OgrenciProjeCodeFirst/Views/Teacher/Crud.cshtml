@@ -1,0 +1,43 @@
+﻿@model OgrenciProjeCodeFirst.Models.Views.TeacherModel
+
+@{
+    ViewBag.Title = "Crud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>@Model.Header</h2>
+            <form method="post">
+                <label>Id</label>
+                <input class="form-control" readonly type="text" name="Id" value="@Model.Teacher.Id" />
+                <label>Name</label>
+                <input class="form-control" type="text" name="Name" value="@Model.Teacher.Name" />
+                <label>SurName</label>
+                <input class="form-control" type="text" name="SurName" value="@Model.Teacher.SurName" />
+                <label>Salary</label>
+                <input class="form-control" type="text" name="Salary" value="@Model.Teacher.Salary" />
+                <label>City Name</label>
+                <select class="form-control" name="CityId">
+                    @foreach (var item in Model.cityList)
+                    {
+                        if (item.CityId == Model.Teacher.CityId)
+                        {
+                            <option selected style="color:red;" name="CityId" value="@item.CityId">@item.CityName</option>
+                        }
+                        else
+                        {
+                            <option name="CityId" value="@item.CityId">@item.CityName</option>
+                        }
+                    }
+                </select>
+                <label>Mother Name</label>
+                <input class="form-control" type="text" name="MotherName" value="@Model.Teacher.MotherName" /><br />
+                <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass"/>
+                <input class="btn btn-warning" type="submit" value="İptal" formaction="/Teacher/List" />
+            </form>
+        </div>
+    </div>
+</div>
+

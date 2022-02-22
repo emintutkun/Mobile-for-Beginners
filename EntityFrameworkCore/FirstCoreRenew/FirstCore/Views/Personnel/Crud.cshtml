@@ -1,0 +1,41 @@
+﻿@model FirstCore.Models.ViewModel.PersonelModel
+
+@{
+    ViewData["Title"] = "Crud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>@Model.Header</h2>
+            <form method="post">
+                <label asp-for="Personnel.PersonelId"></label>
+                <input readonly class="form-control" asp-for="Personnel.PersonelId" />
+                <label asp-for="Personnel.Name"></label>
+                <input class="form-control" asp-for="Personnel.Name" />
+                <label asp-for="Personnel.Surname"></label>
+                <input class="form-control" asp-for="Personnel.Surname" />
+                <label asp-for="Personnel.CityId"></label>
+                <select class="form-control" asp-for="Personnel.CityId">
+                    @foreach (var item in Model.cityList)
+                    {
+                        if (item.CityId == Model.Personnel.CityId)
+                        {
+                            <option selected style="color:red;" name="Personnel.CityId" value="@item.CityId">@item.CityName</option>
+                        }
+                        else
+                        {
+                            <option name="Personnel.CityId" value="@item.CityId">@item.CityName</option>
+                        }
+                    }
+                </select><br />
+                <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass"/>
+                <input type="submit" value="İptal" asp-action="List" class="btn btn-warning"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

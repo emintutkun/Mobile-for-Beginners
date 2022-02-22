@@ -1,0 +1,55 @@
+﻿@model BasicRepositorySoftDelete.Models.Views.PersonelModel
+
+@{
+    ViewData["Title"] = "Crud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>@Model.Header</h2>
+            <hr />
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label>Personel Id</label>
+                    <input readonly asp-for="Personel.Id" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Personel Name</label>
+                    <input asp-for="Personel.PersonelName" class="form-control" />
+                    <span asp-validation-for="Personel.PersonelName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Personel Surname</label>
+                    <input asp-for="Personel.PersonelSurname" class="form-control" />
+                    <span asp-validation-for="Personel.PersonelSurname" class="text-danger"></span>
+                </div>
+                <label>City Name</label>
+                <select class="form-control" asp-for="Personel.CityId">
+                    @foreach (var item in Model.cityList)
+                    {
+                        if (item.Id == Model.Personel.CityId)
+                        {
+                            <option selected style="color:red" name="Personel.CityId" value="@item.Id">@item.CityName</option>
+                        }
+                        else
+                        {
+                            <option name="Personel.CityId" value="@item.Id">@item.CityName</option>
+                        }
+                    }
+                </select><br />
+                <div class="form-group">
+                    <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass" />
+                    <input class="btn btn-secondary" type="submit" value="Back To List" asp-action="List" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
