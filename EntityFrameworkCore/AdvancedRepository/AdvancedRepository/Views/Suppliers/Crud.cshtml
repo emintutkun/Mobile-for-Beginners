@@ -1,0 +1,36 @@
+﻿@model AdvancedRepository.Models.Views.SuppliersModel
+
+@{
+    ViewData["Title"] = "Crud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>@Model.Header</h2>
+            <hr />
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label>Supplier Id</label>
+                    <input readonly asp-for="Suppliers.Id" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input asp-for="Suppliers.CompanyName" class="form-control" />
+                    <span asp-validation-for="Suppliers.CompanyName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass" />
+                    <input type="submit" value="Back To List" class="btn btn-secondary" asp-action="List" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

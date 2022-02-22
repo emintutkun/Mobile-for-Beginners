@@ -1,0 +1,68 @@
+﻿@model AdvancedRepository.Models.Views.ProductsModel
+
+@{
+    ViewData["Title"] = "Crud";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>@Model.Header</h2>
+            <hr />
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label>Product Id</label>
+                    <input readonly asp-for="Products.Id" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input asp-for="Products.ProductName" class="form-control" />
+                    <span asp-validation-for="Products.ProductName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <select name="Products.Supplier.CompanyName">
+                        @foreach (var item in Model.suppliersList)
+                        {
+                            if (item.Id == Model.Products.Supplier.Id)
+                            {
+                                <option class="form-control" selected style="color:red;" value="@item.Id">@item.CompanyName</option>
+                            }
+                            else
+                            {
+                                <option class="form-control" value="@item.Id">@item.CompanyName</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Category Name</label>
+                    <select name="Products.Categories.CategoryName">
+                        @foreach (var item in Model.categoriesList)
+                        {
+                            if (item.Id == Model.Products.Categories.Id)
+                            {
+                                <option class="form-control" selected style="color:red;" value="@item.Id">@item.CategoryName</option>
+                            }
+                            else
+                            {
+                                <option class="form-control" value="@item.Id">@item.CategoryName</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="@Model.BtnValue" class="@Model.BtnClass" />
+                    <input type="submit" value="Back To List" class="btn btn-secondary" asp-action="List" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

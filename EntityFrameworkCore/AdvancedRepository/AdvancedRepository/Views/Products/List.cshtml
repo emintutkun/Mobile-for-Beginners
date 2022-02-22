@@ -1,0 +1,67 @@
+﻿@model IEnumerable<AdvancedRepository.DTOs.ProductsList>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Products List</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            Product Name
+                        </th>
+                        <th>
+                            Company Name
+                        </th>
+                        <th>
+                            Category Name
+                        </th>
+                        <th>
+                            Update
+                        </th>
+                        <th>
+                            Delete
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.Id
+                            </td>
+                            <td>
+                                @item.ProductName
+                            </td>
+                            <td>
+                                @item.CompanyName
+                            </td>
+                            <td>
+                                @item.CategoryName
+                            </td>
+
+                            <td>
+                                <a class="btn btn-success" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p>
+                <a class="btn btn-primary" asp-action="Create">Create New Product</a>
+            </p>
+        </div>
+    </div>
+</div>
