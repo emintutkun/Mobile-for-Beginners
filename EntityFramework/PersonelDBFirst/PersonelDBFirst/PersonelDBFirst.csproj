@@ -166,6 +166,11 @@
     <Compile Include="Models\DTOs\PersonelDTO.cs" />
     <Compile Include="Models\Views\UnvanModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -204,6 +209,10 @@
     <Content Include="Views\Unvan\List.cshtml" />
     <Content Include="Views\Unvan\Crud.cshtml" />
     <Content Include="Views\Personel\List.cshtml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

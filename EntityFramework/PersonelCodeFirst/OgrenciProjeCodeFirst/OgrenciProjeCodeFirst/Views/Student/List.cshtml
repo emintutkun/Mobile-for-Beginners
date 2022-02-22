@@ -1,0 +1,37 @@
+﻿@model List<OgrenciProjeCodeFirst.Models.Data.Student>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Student List</h2>
+<div class="row">
+    <div class="col-md-7">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>City Name</th>
+                    <th>Mother Name</th>
+                    <th>Full Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Surname</td>
+                        <td>@item.City</td>
+                        <td>@item.MotherName</td>
+                        <td>@item.FullName()</td>
+                        <td><a class="btn btn-success" href="/Students/Update/@item.Id">Update</a></td>
+                        <td><a class="btn btn-danger" href="/Students/Delete/@item.Id">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

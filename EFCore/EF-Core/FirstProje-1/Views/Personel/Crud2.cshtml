@@ -1,0 +1,57 @@
+﻿@model FirstProje_1.Models.PersonelModel
+
+@{
+    ViewData["Title"] = "Crud2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4>@Model.Title</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Personel.PersonelId" class="control-label"></label>
+                <input readonly asp-for="Personel.PersonelId" class="form-control" />
+                <span asp-validation-for="Personel.PersonelId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personel.Name" class="control-label"></label>
+                <input asp-for="Personel.Name" class="form-control" />
+                <span asp-validation-for="Personel.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Personel.Surname" class="control-label"></label>
+                <input asp-for="Personel.Surname" class="form-control" />
+                <span asp-validation-for="Personel.Surname" class="text-danger"></span>
+            </div> 
+            <div>
+                <select class="form-control" name="Personel.CityId">
+                    @foreach (var item in Model.cityList)
+                    {
+                        if (item.CityId == Model.Personel.CityId)
+                        {
+                            <option selected style="color:red;" name="Personel.CityId" value="@item.CityId">@item.CityName</option>
+                        }
+                        else
+                        {
+                            <option name="Personel.CityId" value="@item.CityId" >@item.CityName</option>
+                        }
+
+                    }
+                </select>
+            </div>
+            <br /> 
+            <div class="form-group">
+                <input type="submit" value="@Model.BtnVal" class="@Model.BtnClass" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-secondary" asp-action="List">Back to List</a>
+</div>
+@section Scripts{ 
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
