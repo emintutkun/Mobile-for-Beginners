@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseRepositorySoftDelete", "BaseRepositorySoftDelete\BaseRepositorySoftDelete.csproj", "{7E15A925-6D44-4B5E-A935-110B5E8AE24B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E15A925-6D44-4B5E-A935-110B5E8AE24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E15A925-6D44-4B5E-A935-110B5E8AE24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E15A925-6D44-4B5E-A935-110B5E8AE24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E15A925-6D44-4B5E-A935-110B5E8AE24B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {204180A2-6AE5-4B63-A626-B3EC52944642}
+	EndGlobalSection
+EndGlobal

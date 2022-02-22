@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZvN4teD15OzOLplT9mFJx1++D8IkuR+DIT8geSHjJ0lQcM6ixPz7ADqHu7ji4wCKckHV5n3Iy2lIhYTxT99wIQ==",
+  "dgSpecHash": "vog5Y09IyiAhUvyyTMwxnQIqkldR/KY1jgF1Swb0gxQR4GHVCRewboKVk+22qi/r/2FrRiT51f+mtbUUYCvyYQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sem\\Desktop\\EF-Core\\FirstProje-1\\FirstProje-1.csproj",
+  "projectFilePath": "C:\\301Sabah\\Mobile-for-Beginners\\EFCore\\EF-Core\\FirstProje-1\\FirstProje-1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sem\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\sem\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

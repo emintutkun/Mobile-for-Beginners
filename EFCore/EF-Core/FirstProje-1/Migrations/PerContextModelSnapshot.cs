@@ -30,6 +30,9 @@ namespace FirstProje_1.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<string>("Picture")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("CityId");
 
                     b.ToTable("City");
