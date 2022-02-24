@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AdvancedRepository.Migrations
 {
     [DbContext(typeof(SirketContext))]
-    [Migration("20220218105646_First")]
-    partial class First
+    [Migration("20220223063259_ilk")]
+    partial class ilk
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -160,6 +160,9 @@ namespace AdvancedRepository.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")

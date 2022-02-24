@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AdvancedRepository.Migrations
 {
-    public partial class First : Migration
+    public partial class ilk : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -80,6 +80,7 @@ namespace AdvancedRepository.Migrations
                     CountyId = table.Column<int>(type: "int", nullable: false),
                     OutDoorNumber = table.Column<int>(type: "int", nullable: false),
                     PhoneNumber = table.Column<int>(type: "int", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     WhoUpdated = table.Column<string>(type: "nvarchar(max)", nullable: true)
