@@ -23,11 +23,11 @@
                     <span asp-validation-for="Products.ProductName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label>Company Name</label>
-                    <select name="Products.Supplier.CompanyName">
+                    <label>Company Name</label><br />
+                    <select class="form-control" name="Products.SupplierId">
                         @foreach (var item in Model.suppliersList)
                         {
-                            if (item.Id == Model.Products.Supplier.Id)
+                            if (item.Id == Model.Products.SupplierId)
                             {
                                 <option class="form-control" selected style="color:red;" value="@item.Id">@item.CompanyName</option>
                             }
@@ -39,11 +39,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Category Name</label>
-                    <select name="Products.Categories.CategoryName">
+                    <label>Category Name</label><br />
+                    <select class="form-control" name="Products.CategoryId">
                         @foreach (var item in Model.categoriesList)
                         {
-                            if (item.Id == Model.Products.Categories.Id)
+                            if (item.Id == Model.Products.CategoryId)
                             {
                                 <option class="form-control" selected style="color:red;" value="@item.Id">@item.CategoryName</option>
                             }

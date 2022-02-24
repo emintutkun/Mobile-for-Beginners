@@ -53,11 +53,6 @@ namespace AdvancedRepository.Core
             return Set().ToList();
         }
 
-        public void Save()
-        {
-            _db.SaveChanges();
-        }
-
         public DbSet<T> Set()
         {
             return _db.Set<T>();

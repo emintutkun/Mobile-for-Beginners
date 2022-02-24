@@ -14,6 +14,5 @@ namespace AdvancedRepository.Core
         DbSet<T> Set();
         T Find(int id);
         List<T> List();
-        void Save();
     }
 }

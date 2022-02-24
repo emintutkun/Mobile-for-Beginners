@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AdvancedRepository.Models.Classes.Categories>
+﻿@model IEnumerable<AdvancedRepository.DTOs.CategoriesList>
 
 @{
     ViewData["Title"] = "List";
@@ -24,6 +24,9 @@
                         <th>
                             Delete
                         </th>
+                        <th>
+                            Related Product
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +44,9 @@
                             </td>
                             <td>
                                 <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" asp-action="RelatedList" asp-route-id="@item.Id">Related Product</a>
                             </td>
                         </tr>
                     }

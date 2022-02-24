@@ -11,5 +11,6 @@ namespace AdvancedRepository.Repository.Interfaces
     public interface IProductsRepos : IBaseRepository<Products>
     {
         List<ProductsList> GetProductsLists();
+        List<Products> GetRelatedProducts(int id);
     }
 }

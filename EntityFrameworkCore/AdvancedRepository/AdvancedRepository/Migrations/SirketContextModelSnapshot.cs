@@ -160,6 +160,9 @@ namespace AdvancedRepository.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
@@ -195,6 +198,8 @@ namespace AdvancedRepository.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ManagerId");
 
                     b.ToTable("Employees");
                 });
@@ -330,6 +335,17 @@ namespace AdvancedRepository.Migrations
                     b.Navigation("Cities");
                 });
 
+            modelBuilder.Entity("AdvancedRepository.Models.Classes.Employees", b =>
+                {
+                    b.HasOne("AdvancedRepository.Models.Classes.Employees", "Manager")
+                        .WithMany("Managers")
+                        .HasForeignKey("ManagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Manager");
+                });
+
             modelBuilder.Entity("AdvancedRepository.Models.Classes.Products", b =>
                 {
                     b.HasOne("AdvancedRepository.Models.Classes.Categories", "Categories")
@@ -365,6 +381,11 @@ namespace AdvancedRepository.Migrations
             modelBuilder.Entity("AdvancedRepository.Models.Classes.Cities", b =>
                 {
                     b.Navigation("County");
+                });
+
+            modelBuilder.Entity("AdvancedRepository.Models.Classes.Employees", b =>
+                {
+                    b.Navigation("Managers");
                 });
 
             modelBuilder.Entity("AdvancedRepository.Models.Classes.Suppliers", b =>

@@ -2,6 +2,8 @@
 using AdvancedRepository.Models.Views;
 using AdvancedRepository.Repository.Classes;
 using AdvancedRepository.Repository.Interfaces;
+using AdvancedRepository.UnitOfWork;
+using AdvancedRepository.UoW;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,22 +14,16 @@ namespace AdvancedRepository.Controllers
 {
     public class ProductsController : Controller
     {
-        IProductsRepos _repo;
-        ISuppliersRepos _repoSup;
-        IUnitsRepos _repoUnit;
-        ICategoriesRepos _repoCat;
         ProductsModel _model;
-        public ProductsController(IProductsRepos repo, ProductsModel model, ISuppliersRepos repoSup, IUnitsRepos reposUnit, ICategoriesRepos repoCat)
+        IUoW _uow;
+        public ProductsController(ProductsModel model, IUoW uow)
         {
-            _repo = repo;
             _model = model;
-            _repoSup = repoSup;
-            _repoUnit = reposUnit;
-            _repoCat = repoCat;
+            _uow = uow;
         }
         public IActionResult List()
         {
-            var list = _repo.GetProductsLists();
+            var list = _uow._proRepos.GetProductsLists();
             return View(list);
         }
 
@@ -37,54 +33,57 @@ namespace AdvancedRepository.Controllers
             _model.Products = new Products();
             _model.BtnClass = "btn btn-primary";
             _model.BtnValue = "Create";
-            _model.suppliersList = _repoSup.GetSuppliers();
-            _model.categoriesList = _repoCat.GetCategories();
+            _model.suppliersList = _uow._supRepos.GetSuppliers();
+            _model.categoriesList = _uow._catRepos.GetCategories();
             return View("Crud", _model);
         }
 
         [HttpPost]
         public IActionResult Create(ProductsModel model)
         {
-            var list = _repo.Create(model.Products);
-            _repo.Save();
+            var list = _uow._proRepos.Create(model.Products);
+            _uow.Commit();
+            _uow.Dispose();
             return View(list);
         }
 
         [HttpGet]
         public IActionResult Update(int id)
         {
-            _model.Products = _repo.Find(id);
+            _model.Products = _uow._proRepos.Find(id);
             _model.BtnClass = "btn btn-success";
             _model.BtnValue = "Update";
-            _model.suppliersList = _repoSup.GetSuppliers();
-            _model.categoriesList = _repoCat.GetCategories();
+            _model.suppliersList = _uow._supRepos.GetSuppliers();
+            _model.categoriesList = _uow._catRepos.GetCategories();
             return View("Crud", _model);
         }
 
         [HttpPost]
         public IActionResult Update(ProductsModel model)
         {
-            var list = _repo.Update(model.Products);
-            _repo.Save();
+            var list = _uow._proRepos.Update(model.Products);
+            _uow.Commit();
+            _uow.Dispose();
             return View(list);
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            _model.Products = _repo.Find(id);
+            _model.Products = _uow._proRepos.Find(id);
             _model.BtnClass = "btn btn-danger";
             _model.BtnValue = "Delete";
-            _model.suppliersList = _repoSup.GetSuppliers();
-            _model.categoriesList = _repoCat.GetCategories();
+            _model.suppliersList = _uow._supRepos.GetSuppliers();
+            _model.categoriesList = _uow._catRepos.GetCategories();
             return View("Crud", _model);
         }
 
         [HttpPost]
         public IActionResult Delete(ProductsModel model)
         {
-            var list = _repo.Delete(model.Products);
-            _repo.Save();
+            var list = _uow._proRepos.Delete(model.Products);
+            _uow.Commit();
+            _uow.Dispose();
             return View(list);
         }
 

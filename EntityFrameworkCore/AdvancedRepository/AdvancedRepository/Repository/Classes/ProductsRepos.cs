@@ -28,6 +28,10 @@ namespace AdvancedRepository.Repository.Classes
             return productsList;        
         }
 
-        
+        public List<Products> GetRelatedProducts(int id)
+        {
+            var categories = Set().Where(x => x.CategoryId == id).Include(x => x.Categories).ToList();
+            return categories;
+        }
     }
 }

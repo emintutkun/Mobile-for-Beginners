@@ -1,6 +1,7 @@
 ﻿using AdvancedRepository.Models.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,7 +22,10 @@ namespace AdvancedRepository.Models.Classes
         public int PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
 
-        public string GetTitle()
+        [ForeignKey("ManagerId")]
+        public Employees Manager { get; set; }
+        public List<Employees> Managers { get; set; }
+        /*public string GetTitle()
         {
             if (Gender == 'E')
             {
@@ -43,6 +47,6 @@ namespace AdvancedRepository.Models.Classes
                 age++;
             }
             return age;
-        }
+        }*/
     }
 }

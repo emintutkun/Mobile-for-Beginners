@@ -1,0 +1,78 @@
+﻿@model IEnumerable<AdvancedRepository.DTOs.EmployeesList>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Employees List</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Employees Id
+                        </th>
+                        <th>
+                            Full Name
+                        </th>
+                        <th>
+                            Salary
+                        </th>
+                        <th>
+                            Manager Name
+                        </th>
+                        <th>
+                            Manager Id
+                        </th>
+                        <th>
+                            Update
+                        </th>
+                        <th>
+                            Delete
+                        </th>
+                        <th>
+                            Related Manager
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.EmployeesId
+                            </td>
+                            <td>
+                                @item.FullName
+                            </td>
+                            <td>
+                                @item.Salary
+                            </td>
+                            <td>
+                                @item.ManagerName
+                            </td>
+                            <td>
+                                @item.ManagerId
+                            </td>
+                            <td>
+                                <a class="btn btn-success" asp-action="Update" asp-route-id="@item.EmployeesId">Update</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.EmployeesId">Delete</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-dark" asp-action="RelatedList" asp-route-id="@item.ManagerId">Related Manager</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p>
+                <a class="btn btn-primary" asp-action="Create">Create New Employee</a>
+            </p>
+        </div>
+    </div>
+</div>

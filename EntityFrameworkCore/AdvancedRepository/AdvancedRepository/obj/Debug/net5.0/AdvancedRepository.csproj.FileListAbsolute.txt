@@ -51,7 +51,6 @@ C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\Advanced
 C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\AdvancedRepository.RazorAssemblyInfo.cache
 C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\AdvancedRepository.RazorAssemblyInfo.cs
 C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\staticwebassets\AdvancedRepository.StaticWebAssets.Manifest.cache
-C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\staticwebassets\AdvancedRepository.StaticWebAssets.xml
 C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\scopedcss\bundle\AdvancedRepository.styles.css
 C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\AdvancedRepository.TagHelpers.input.cache
 C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\AdvancedRepository.TagHelpers.output.cache
@@ -152,3 +151,7 @@ C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\Advanced
 C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\Razor\Views\Suppliers\List.cshtml.g.cs
 C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\Razor\Views\Suppliers\Crud.cshtml.g.cs
 C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\Razor\Views\Products\List.cshtml.g.cs
+C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\Razor\Views\Products\Crud.cshtml.g.cs
+C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\Razor\Views\Categories\RelatedList.cshtml.g.cs
+C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\Razor\Views\Employees\List.cshtml.g.cs
+C:\301Sabah\Mobile-for-Beginners\EntityFrameworkCore\AdvancedRepository\AdvancedRepository\obj\Debug\net5.0\Razor\Views\Employees\RelatedList.cshtml.g.cs

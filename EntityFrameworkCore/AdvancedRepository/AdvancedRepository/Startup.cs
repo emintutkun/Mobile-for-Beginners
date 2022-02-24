@@ -2,6 +2,8 @@ using AdvancedRepository.Models.Data;
 using AdvancedRepository.Models.Views;
 using AdvancedRepository.Repository.Classes;
 using AdvancedRepository.Repository.Interfaces;
+using AdvancedRepository.UnitOfWork;
+using AdvancedRepository.UoW;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -33,10 +35,12 @@ namespace AdvancedRepository
             services.AddScoped<ICategoriesRepos, CategoriesRepos>();
             services.AddScoped<ISuppliersRepos, SuppliersRepos>();
             services.AddScoped<IUnitsRepos, UnitsRepos>();
+            services.AddScoped<IEmployeesRepos, EmployeesRepos>();
             services.AddScoped<CategoriesModel>();
             services.AddScoped<ProductsModel>();
             services.AddScoped<UnitsModel>();
             services.AddScoped<SuppliersModel>();
+            services.AddScoped<IUoW, UoWClass>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

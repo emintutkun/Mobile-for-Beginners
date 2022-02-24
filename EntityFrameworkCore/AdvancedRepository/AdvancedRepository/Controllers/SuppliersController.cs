@@ -1,6 +1,8 @@
 ﻿using AdvancedRepository.Models.Classes;
 using AdvancedRepository.Models.Views;
 using AdvancedRepository.Repository.Interfaces;
+using AdvancedRepository.UnitOfWork;
+using AdvancedRepository.UoW;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,16 +13,16 @@ namespace AdvancedRepository.Controllers
 {
     public class SuppliersController : Controller
     {
-        ISuppliersRepos _repos;
         SuppliersModel _model;
-        public SuppliersController(ISuppliersRepos repos, SuppliersModel model)
+        IUoW _uow;
+        public SuppliersController(SuppliersModel model, IUoW uow)
         {
-            _repos = repos;
             _model = model;
+            _uow = uow;
         }
         public IActionResult List()
         {
-            var supplier = _repos.GetSuppliers();
+            var supplier = _uow._supRepos.GetSuppliers();
             return View(supplier);
         }
 
@@ -37,15 +39,16 @@ namespace AdvancedRepository.Controllers
         [HttpPost]
         public IActionResult Create(SuppliersModel model)
         {
-            _repos.Create(model.Suppliers);
-            _repos.Save();
+            _uow._supRepos.Create(model.Suppliers);
+            _uow.Commit();
+            _uow.Dispose();
             return RedirectToAction("List");
         }
 
         [HttpGet]
         public IActionResult Update(int id)
         {
-            _model.Suppliers = _repos.Find(id);
+            _model.Suppliers = _uow._supRepos.Find(id);
             _model.Header = "Update Page";
             _model.BtnClass = "btn btn-success";
             _model.BtnValue = "Update";
@@ -55,15 +58,16 @@ namespace AdvancedRepository.Controllers
         [HttpPost]
         public IActionResult Update(SuppliersModel model)
         {
-            _repos.Update(model.Suppliers);
-            _repos.Save();
+            _uow._supRepos.Update(model.Suppliers);
+            _uow.Commit();
+            _uow.Dispose();
             return RedirectToAction("List");
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            _model.Suppliers = _repos.Find(id);
+            _model.Suppliers = _uow._supRepos.Find(id);
             _model.Header = "Delete Page";
             _model.BtnClass = "btn btn-danger";
             _model.BtnValue = "Delete";
@@ -73,8 +77,9 @@ namespace AdvancedRepository.Controllers
         [HttpPost]
         public IActionResult Delete(SuppliersModel model)
         {
-            _repos.Delete(model.Suppliers);
-            _repos.Save();
+            _uow._supRepos.Delete(model.Suppliers);
+            _uow.Commit();
+            _uow.Dispose();
             return RedirectToAction("List");
         }
     }

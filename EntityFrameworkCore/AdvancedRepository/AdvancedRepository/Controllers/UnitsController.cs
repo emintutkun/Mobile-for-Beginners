@@ -1,6 +1,8 @@
 ﻿using AdvancedRepository.Models.Classes;
 using AdvancedRepository.Models.Views;
 using AdvancedRepository.Repository.Interfaces;
+using AdvancedRepository.UnitOfWork;
+using AdvancedRepository.UoW;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,16 +13,16 @@ namespace AdvancedRepository.Controllers
 {
     public class UnitsController : Controller
     {
-        IUnitsRepos _repo;
         UnitsModel _model;
-        public UnitsController(IUnitsRepos repo, UnitsModel model)
+        IUoW _uow;
+        public UnitsController(UnitsModel model, IUoW uow)
         {
-            _repo = repo;
             _model = model;
+            _uow = uow;
         }
         public IActionResult List()
         {
-            var units = _repo.GetUnits();
+            var units = _uow._uniRepos.GetUnits();
             return View(units);
         }
 
@@ -37,15 +39,16 @@ namespace AdvancedRepository.Controllers
         [HttpPost]
         public IActionResult Create(UnitsModel model)
         {
-            _repo.Create(model.Units);
-            _repo.Save();
+            _uow._uniRepos.Create(model.Units);
+            _uow.Commit();
+            _uow.Dispose();
             return RedirectToAction("List");
         }
 
         [HttpGet]
         public IActionResult Update(int id)
         {
-            _model.Units = _repo.Find(id);
+            _model.Units = _uow._uniRepos.Find(id);
             _model.Header = "Update Page";
             _model.BtnClass = "btn btn-success";
             _model.BtnValue = "Update";
@@ -55,15 +58,16 @@ namespace AdvancedRepository.Controllers
         [HttpPost]
         public IActionResult Update(UnitsModel model)
         {
-            _repo.Update(model.Units);
-            _repo.Save();
+            _uow._uniRepos.Update(model.Units);
+            _uow.Commit();
+            _uow.Dispose();
             return RedirectToAction("List");
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            _model.Units = _repo.Find(id);
+            _model.Units = _uow._uniRepos.Find(id);
             _model.Header = "Delete Page";
             _model.BtnClass = "btn btn-danger";
             _model.BtnValue = "Delete";
@@ -73,8 +77,9 @@ namespace AdvancedRepository.Controllers
         [HttpPost]
         public IActionResult Delete(UnitsModel model)
         {
-            _repo.Delete(model.Units);
-            _repo.Save();
+            _uow._uniRepos.Delete(model.Units);
+            _uow.Commit();
+            _uow.Dispose();
             return RedirectToAction("List");
         }
     }
